@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import avatar from '../../assets/images/avatar.png';
+import React, { useEffect, useState } from 'react';
 import background from '../../assets/images/background.jpg';
 import Header from '../../components/Header';
 import ItemList from '../../components/ItemList';
 import './styles.css';
 
 function App() {
-  const [username, setUsername] = useState('');
+  const token = process.env.GITHUB_TOKEN;
+  const [username, setUsername] = useState('kelsonbatista');
   const [currentUser, setCurrentUser] = useState(null);
   const [repositories, setRepositories] = useState([]);
 
@@ -15,16 +15,30 @@ function App() {
   }
 
   const handleGetData = async () => {
-    const userData = await fetch(`https://api.github.com/users/${username}`)
+    const userData = await fetch(`https://api.github.com/users/${username}`, {
+      headers: {
+        Authorization: {token},
+      },
+    })
       .then((response) => response.json())
       .then((data) => data);
     
-    console.log(userData);
+    setCurrentUser(userData);
 
-    const repoData = await fetch(`https://api.github.com/users/${username}/repos`)
+    const repoData = await fetch(`https://api.github.com/users/${username}/repos`, {
+      headers: {
+        Authorization: {token},
+      },
+    })
       .then((response) => response.json())
       .then((data) => data);
+
+    setRepositories(repoData);
   }
+
+  useEffect(() => {
+    handleGetData();
+  }, []);
 
   return (
     <div className="App">
@@ -42,12 +56,16 @@ function App() {
             <button onClick={handleGetData}>Find</button>
           </div>
           <div className="profile">
-            <img src={avatar} className="avatar" alt="Avatar" />
-            <div>
-              <h3>Username</h3>
-              <span>@username</span>
-              <p>Description</p>
-            </div>
+            {currentUser && (
+              <>
+                <img src={currentUser.avatar_url} className="avatar" alt="Avatar" />
+                <div>
+                  <h3>{currentUser.name}</h3>
+                  <span>{currentUser.login}</span>
+                  <p>{currentUser.bio}</p>
+                </div>
+              </>
+            )}
           </div>
           <hr />
           <div>
