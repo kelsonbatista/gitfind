@@ -1,0 +1,44 @@
+.content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+
+.background {
+  height:  85vh;
+  position: absolute;
+  left: 0;
+  top: 10px;
+}
+
+.info {
+  width: 60%;
+  margin-right: 90px;
+  color: #fff;
+}
+
+.info input {
+  border: 1px solid #999;
+  border-radius: 22px;
+  width: 70%;
+  min-width: 250px;
+  margin-right: 12px;
+  margin-top: 20px;
+  background: transparent;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.info button {
+  border: 1px solid #999;
+  border-radius: 22px;
+  margin-right: 12px;
+  margin-top: 20px;
+  width: 20%;
+  background: #2D3338;
+  font-size: 18px;
+  padding: 10px;
+  color: #fff;
+}
