@@ -56,7 +56,7 @@ function App() {
             <button onClick={handleGetData}>Find</button>
           </div>
           <div className="profile">
-            {currentUser && (
+            {currentUser ? (
               <>
                 <img src={currentUser.avatar_url} className="avatar" alt="Avatar" />
                 <div>
@@ -65,7 +65,7 @@ function App() {
                   <p>{currentUser.bio}</p>
                 </div>
               </>
-            )}
+            ): <h3>User not found</h3>}
           </div>
           <hr />
           <div>
