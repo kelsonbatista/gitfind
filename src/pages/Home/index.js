@@ -52,31 +52,42 @@ function App() {
               type="text"
               placeholder="@username"
               value={username}
-              onChange={handleUsername} />
+              onChange={handleUsername}
+            />
             <button onClick={handleGetData}>Find</button>
           </div>
           <div className="profile">
             {currentUser ? (
               <>
-                <img src={currentUser.avatar_url} className="avatar" alt="Avatar" />
+                <img
+                  src={currentUser.avatar_url}
+                  className="avatar"
+                  alt="Avatar"
+                />
                 <div>
                   <h3>{currentUser.name}</h3>
                   <span>{currentUser.login}</span>
                   <p>{currentUser.bio}</p>
                 </div>
               </>
-            ): <h3>User not found</h3>}
+            ) : (
+              ""
+            )}
           </div>
           <hr />
           <div>
             <h4 className="repository">Repositories</h4>
-            {repositories.map((repository) => (
-              <ItemList
-                key={repository.id}
-                title={repository.name}
-                description={repository.description}
-              />
-            ))}
+            {currentUser ? (
+              repositories.map((repository) => (
+                <ItemList
+                  key={repository.id}
+                  title={repository.name}
+                  description={repository.description}
+                />
+              ))
+            ) : (
+              <h3>User not found</h3>
+            )}
           </div>
         </div>
       </div>
