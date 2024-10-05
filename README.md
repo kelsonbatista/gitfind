@@ -6,6 +6,10 @@ Git find project React (DIO)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+### Layout
+
+![layour](./src/assets/images/layout.jpg)
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -71,9 +75,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-### Layout
-
-![layour](./src/assets/images/layout.jpg)
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
->>>>>>> f06fbe6 (Initialize project using Create React App)
