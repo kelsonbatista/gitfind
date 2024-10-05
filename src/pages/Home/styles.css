@@ -42,3 +42,46 @@
   padding: 10px;
   color: #fff;
 }
+
+.profile {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  margin: 20px auto;
+  flex-direction: row;
+  width: 70%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.info hr {
+  margin-bottom: 20px;
+}
+
+.profile .avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin-right: 20px;
+}
+
+.profile h3 {
+  color: #999;
+  margin: 0;
+  font-size: 24px;
+}
+
+.profile span {
+  display: block;
+  color: #999;
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.profile p {
+  color: #999;
+  font-size: 12px;
+}
