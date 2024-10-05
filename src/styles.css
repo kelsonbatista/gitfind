@@ -12,3 +12,18 @@ hr {
   background-color: rgba(229,229,229,0.2);
   border: 1px solid rgba(229,229,229,0.2);
 }
+
+header {
+  height: 52px;
+  width: 100vw;
+  background-color: #2d333b !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-family: "Inter, Roboto, Arial, sans-serif";
+  font-size: 24px;
+  color: #fff;
+}
