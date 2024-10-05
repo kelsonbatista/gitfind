@@ -1,6 +1,7 @@
 import avatar from '../../assets/images/avatar.png';
 import background from '../../assets/images/background.jpg';
 import Header from '../../components/Header';
+import ItemList from '../../components/ItemList';
 import './styles.css';
 
 function App() {
@@ -24,18 +25,10 @@ function App() {
           </div>
           <hr />
           <div>
-            <h3>Repositories</h3>
-            <ul>
-              <li>
-                <a href="/#">Repository 1</a>
-              </li>
-              <li>
-                <a href="/#">Repository 2</a>
-              </li>
-              <li>
-                <a href="/#">Repository 3</a>
-              </li>
-            </ul>
+            <h4 className="repository">Repositories</h4>
+            <ItemList title="Primeiro item" description="Description" />
+            <ItemList title="Primeiro item" description="Description" />
+            <ItemList title="Primeiro item" description="Description" />
           </div>
         </div>
       </div>

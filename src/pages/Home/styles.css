@@ -85,3 +85,10 @@
   color: #999;
   font-size: 12px;
 }
+
+.repository {
+  font-size: 32px;
+  color: #fff;
+  margin: 12px 0;
+  text-align: center;
+}
